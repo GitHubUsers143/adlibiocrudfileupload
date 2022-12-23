@@ -94,7 +94,7 @@ export default function EditUser() {
           body: JSON.stringify({ ...newUser }),
         };
         await fetch(
-          `http://localhost:3001/users/update/${params.id}`,
+          `https://adlibiocrudfileuploadbackend.vercel.app/users/update/${params.id}`,
           requestOptions
         )
           .then(() => {
@@ -136,7 +136,10 @@ export default function EditUser() {
         Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
     };
-    await fetch(`http://localhost:3001/users/user/${params.id}`, requestOptions)
+    await fetch(
+      `https://adlibiocrudfileuploadbackend.vercel.app/users/user/${params.id}`,
+      requestOptions
+    )
       .then(async (response) => {
         const { user } = await response.json();
         formik.setFieldValue("firstName", user.firstName);

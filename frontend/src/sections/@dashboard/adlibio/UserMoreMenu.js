@@ -29,7 +29,10 @@ export default function UserMoreMenu({ _id, refresh }) {
         Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
     };
-    await fetch(`http://localhost:3001/users/delete/${_id}`, requestOptions)
+    await fetch(
+      `https://adlibiocrudfileuploadbackend.vercel.app/users/delete/${_id}`,
+      requestOptions
+    )
       .then(async (response) => {
         const { success, error } = await response.json();
         if (!success)

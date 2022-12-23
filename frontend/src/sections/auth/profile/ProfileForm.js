@@ -38,7 +38,9 @@ export default function ProfileForm() {
       },
     };
     await fetch(
-      `http://localhost:3001/users/user/${window.localStorage.getItem("user")}`,
+      `https://adlibiocrudfileuploadbackend.vercel.app/users/user/${window.localStorage.getItem(
+        "user"
+      )}`,
       requestOptions
     )
       .then(async (response) => {
@@ -104,7 +106,7 @@ export default function ProfileForm() {
           body: JSON.stringify({ ...newUser }),
         };
         await fetch(
-          `http://localhost:3001/users/update/${user._id}`,
+          `https://adlibiocrudfileuploadbackend.vercel.app/users/update/${user._id}`,
           requestOptions
         )
           .then(async (response) => {

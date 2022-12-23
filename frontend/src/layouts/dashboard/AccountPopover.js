@@ -53,7 +53,9 @@ export default function AccountPopover() {
       },
     };
     await fetch(
-      `http://localhost:3001/users/user/${window.localStorage.getItem("user")}`,
+      `https://adlibiocrudfileuploadbackend.vercel.app/users/user/${window.localStorage.getItem(
+        "user"
+      )}`,
       requestOptions
     )
       .then(async (response) => {

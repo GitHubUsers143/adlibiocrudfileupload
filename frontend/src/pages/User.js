@@ -112,7 +112,10 @@ export default function User() {
         Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
     };
-    await fetch("http://localhost:3001/users/", requestOptions)
+    await fetch(
+      "https://adlibiocrudfileuploadbackend.vercel.app/users/",
+      requestOptions
+    )
       .then(async (response) => {
         const { users } = await response.json();
         setUsers(users);

@@ -61,7 +61,10 @@ export default function Dashboard() {
         Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
     };
-    await fetch("http://localhost:3001/users/", requestOptions)
+    await fetch(
+      "https://adlibiocrudfileuploadbackend.vercel.app/users/",
+      requestOptions
+    )
       .then(async (response) => {
         const { success, users, error } = await response.json();
         if (!success)
@@ -94,7 +97,9 @@ export default function Dashboard() {
       },
     };
     await fetch(
-      `http://localhost:3001/users/user/${window.localStorage.getItem("user")}`,
+      `https://adlibiocrudfileuploadbackend.vercel.app/users/user/${window.localStorage.getItem(
+        "user"
+      )}`,
       requestOptions
     )
       .then(async (response) => {
@@ -201,7 +206,7 @@ export default function Dashboard() {
                 name="role"
                 fullWidth
                 label="Role"
-                value={_user?.role === user ? "User" : "Admin"}
+                value={_user?.role === "user" ? "User" : "Admin"}
               />
 
               <List

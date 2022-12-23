@@ -81,7 +81,10 @@ export const registerInitiate = (values, type) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...values }),
     };
-    await fetch("http://localhost:3001/users/add", requestOptions)
+    await fetch(
+      "https://adlibiocrudfileuploadbackend.vercel.app/users/add",
+      requestOptions
+    )
       .then(async (response) => {
         const { success, user, error } = await response.json();
         if (!success) {
@@ -133,7 +136,10 @@ export const loginInitiate = (values) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ ...values }),
     };
-    await fetch("http://localhost:3001/users/login", requestOptions)
+    await fetch(
+      "https://adlibiocrudfileuploadbackend.vercel.app/users/login",
+      requestOptions
+    )
       .then(async (response) => {
         const { success, user, token, error } = await response.json();
         if (!success) {
