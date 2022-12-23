@@ -1,3 +1,4 @@
+// Import packages
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -24,6 +25,6 @@ app.use("/users/:id", require("./routes/user"));
 app.use("/users/update/:id", require("./routes/user"));
 app.use("/users/delete/:id", require("./routes/user"));
 
-app.listen("3001", function () {
+app.listen("9001", function () {
   console.log("Server is running");
 });
